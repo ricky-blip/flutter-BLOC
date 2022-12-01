@@ -1,0 +1,1 @@
+export 'package:bloc_roadmap/infrastructure/navigation/bindings/controllers/home.controller.binding.dart'; 
