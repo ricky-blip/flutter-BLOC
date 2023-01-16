@@ -51,6 +51,8 @@ class CubitBasicPage extends StatelessWidget {
                     "${snapshot.data}",
                     style: const TextStyle(
                       fontSize: 30,
+                      color: Colors.deepPurpleAccent,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 );
