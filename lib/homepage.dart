@@ -56,7 +56,7 @@ class HomePage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const CubitObserver(),
+                        builder: (context) => CubitObserver(),
                       ),
                     );
                   },
