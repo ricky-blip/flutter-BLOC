@@ -1,5 +1,6 @@
-import 'package:bloc_roadmap/roadmap/0.stream/stream_page.dart';
-import 'package:bloc_roadmap/roadmap/1.cubit.dart';
+import 'package:bloc_roadmap/roadmap/0.intro/0.stream/stream_page.dart';
+import 'package:bloc_roadmap/roadmap/0.intro/1.cubit.dart';
+import 'package:bloc_roadmap/roadmap/0.intro/2.cubit_observer.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -27,7 +28,7 @@ class HomePage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => StreamPage(),
+                        builder: (context) => const StreamPage(),
                       ),
                     );
                   },
@@ -41,11 +42,25 @@ class HomePage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const CubitBasicPage(),
+                        builder: (context) => CubitBasicPage(),
                       ),
                     );
                   },
                   child: const Text("Cubit (basic)"),
+                ),
+                const SizedBox(height: 5),
+                //2. Cubit Observer
+                ElevatedButton(
+                  onPressed: () {
+                    //to Cubit Page
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CubitObserver(),
+                      ),
+                    );
+                  },
+                  child: const Text("Cubit Observer"),
                 ),
               ],
             ),

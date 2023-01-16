@@ -1,4 +1,4 @@
-import 'package:bloc_roadmap/roadmap/0.stream/counter_app_2.dart';
+import 'package:bloc_roadmap/roadmap/0.intro/0.stream/counter_app_2.dart';
 import 'package:flutter/material.dart';
 
 import 'counter_app_1.dart';
