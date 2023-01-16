@@ -5,7 +5,9 @@ description: A new Flutter project.
 environment: 
   sdk: '>=2.18.5 <3.0.0'
 
-dependencies: 
+dependencies:
+  flutter_bloc: ^8.1.1
+  bloc: ^8.1.0 
   cupertino_icons: ^1.0.2
   get: 4.6.5
   flutter: 

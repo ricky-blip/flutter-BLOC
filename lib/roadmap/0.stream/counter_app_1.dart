@@ -4,17 +4,30 @@ class CounterApp1 extends StatelessWidget {
   const CounterApp1({super.key});
 
   //function for Stream Data with Timer
-  Stream<int> countDataTimer() async* {
+  Stream countDataTimer() async* {
     int i = 0;
     //looping number 1 - 10
     for (i; i <= 10; i++) {
-      //waiting data for 2 seconds
+      //delay data with time
       await Future.delayed(
-        const Duration(milliseconds: 1000),
+        const Duration(milliseconds: 200),
       );
       //return
       yield i;
     }
+
+    yield "stop";
+    int j = 10;
+    for (j; j >= 0; j--) {
+      //waiting data for 2 seconds
+      await Future.delayed(
+        const Duration(milliseconds: 500),
+      );
+      //return
+      yield j;
+    }
+
+    yield "Done";
   }
 
   @override
