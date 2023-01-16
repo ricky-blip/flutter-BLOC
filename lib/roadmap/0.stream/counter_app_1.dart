@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
-class StreamPage extends StatelessWidget {
-  const StreamPage({super.key});
+class CounterApp1 extends StatelessWidget {
+  const CounterApp1({super.key});
 
-  //function for data stream
-  Stream<int> countData() async* {
+  //function for Stream Data with Timer
+  Stream<int> countDataTimer() async* {
+    int i = 0;
     //looping number 1 - 10
-    for (var i = 0; i <= 100; i++) {
+    for (i; i <= 10; i++) {
       //waiting data for 2 seconds
       await Future.delayed(
-        const Duration(milliseconds: 100),
+        const Duration(milliseconds: 1000),
       );
       //return
       yield i;
@@ -19,11 +20,9 @@ class StreamPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Stream Apps Page"),
-      ),
+      backgroundColor: Colors.grey,
       body: StreamBuilder(
-        stream: countData(),
+        stream: countDataTimer(),
         builder: (context, snapshot) {
           //condition loading
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -32,6 +31,7 @@ class StreamPage extends StatelessWidget {
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                //Data Number
                 Center(
                   child: Text(
                     "${snapshot.data}",
@@ -40,20 +40,7 @@ class StreamPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.center,
-                //   children: [
-                //     ElevatedButton(
-                //       onPressed: () {},
-                //       child: Text("-"),
-                //     ),
-                //     const SizedBox(width: 50),
-                //     ElevatedButton(
-                //       onPressed: () {},
-                //       child: Text("+"),
-                //     ),
-                //   ],
-                // ),
+                const SizedBox(height: 20),
               ],
             );
           }

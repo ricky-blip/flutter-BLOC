@@ -1,18 +1,18 @@
-import 'package:bloc_roadmap/roadmap/0.stream/stream_page.dart';
-import 'package:bloc_roadmap/roadmap/1.cubit.dart';
+import 'package:bloc_roadmap/roadmap/0.stream/counter_app_2.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+import 'counter_app_1.dart';
+
+class StreamPage extends StatelessWidget {
+  const StreamPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
-        title: const Center(
-          child: Text('Bloc HomePage'),
-        ),
+        backgroundColor: Colors.deepPurpleAccent,
+        centerTitle: true,
+        title: const Text("Stream Counter App"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -27,11 +27,11 @@ class HomePage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => StreamPage(),
+                        builder: (context) => const CounterApp1(),
                       ),
                     );
                   },
-                  child: const Text("Stream"),
+                  child: const Text("Counter App Stream (Timer) Concept"),
                 ),
                 const SizedBox(height: 5),
                 //1. Basic Cubit
@@ -41,11 +41,17 @@ class HomePage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const CubitBasicPage(),
+                        builder: (context) => const CounterApp2(),
                       ),
                     );
                   },
-                  child: const Text("Cubit (basic)"),
+                  child: const Text(
+                    "Counter App Stream (Button) \nStreamController & StreamBuilder",
+                    style: TextStyle(
+                      fontSize: 15,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ],
             ),
