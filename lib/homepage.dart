@@ -1,4 +1,5 @@
 import 'package:bloc_roadmap/roadmap/0.stream.dart';
+import 'package:bloc_roadmap/roadmap/1.cubit.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,6 +9,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
         title: const Center(
           child: Text('Bloc HomePage'),
         ),
@@ -39,7 +41,7 @@ class HomePage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const StreamPage(),
+                        builder: (context) => const CubitBasicPage(),
                       ),
                     );
                   },
