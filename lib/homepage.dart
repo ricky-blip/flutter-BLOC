@@ -2,6 +2,8 @@ import 'package:bloc_roadmap/roadmap/0.intro/0.stream/stream_page.dart';
 import 'package:bloc_roadmap/roadmap/0.intro/1.cubit.dart';
 import 'package:bloc_roadmap/roadmap/0.intro/2.cubit_observer.dart';
 import 'package:bloc_roadmap/roadmap/1.cubit/0.bloc_builder.dart';
+import 'package:bloc_roadmap/roadmap/1.cubit/1.bloc_listener.dart';
+import 'package:bloc_roadmap/roadmap/1.cubit/2.bloc_consumer.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -74,6 +76,32 @@ class HomePage extends StatelessWidget {
                     );
                   },
                   child: const Text("Bloc Builder"),
+                ),
+                const SizedBox(height: 5),
+                //4. Bloc Listener
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BlocListenerPage(),
+                      ),
+                    );
+                  },
+                  child: const Text("Bloc Listener"),
+                ),
+                const SizedBox(height: 5),
+                //5. Bloc Consumer
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BlocConsumerPage(),
+                      ),
+                    );
+                  },
+                  child: const Text("Bloc Consumer"),
                 ),
               ],
             ),
