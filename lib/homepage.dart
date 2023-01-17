@@ -1,6 +1,7 @@
 import 'package:bloc_roadmap/roadmap/0.intro/0.stream/stream_page.dart';
 import 'package:bloc_roadmap/roadmap/0.intro/1.cubit.dart';
 import 'package:bloc_roadmap/roadmap/0.intro/2.cubit_observer.dart';
+import 'package:bloc_roadmap/roadmap/1.cubit/0.bloc_builder.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -52,7 +53,6 @@ class HomePage extends StatelessWidget {
                 //2. Cubit Observer
                 ElevatedButton(
                   onPressed: () {
-                    //to Cubit Page
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -61,6 +61,19 @@ class HomePage extends StatelessWidget {
                     );
                   },
                   child: const Text("Cubit Observer"),
+                ),
+                const SizedBox(height: 5),
+                //3. Bloc Builder
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BlocBuilderPage(),
+                      ),
+                    );
+                  },
+                  child: const Text("Bloc Builder"),
                 ),
               ],
             ),
