@@ -23,6 +23,7 @@ class CubitBasicPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white12,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.deepPurpleAccent,

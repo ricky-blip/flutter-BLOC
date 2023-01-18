@@ -4,6 +4,7 @@ import 'package:bloc_roadmap/roadmap/0.intro/2.cubit_observer.dart';
 import 'package:bloc_roadmap/roadmap/1.cubit/0.bloc_builder.dart';
 import 'package:bloc_roadmap/roadmap/1.cubit/1.bloc_listener.dart';
 import 'package:bloc_roadmap/roadmap/1.cubit/2.bloc_consumer.dart';
+import 'package:bloc_roadmap/roadmap/1.cubit/3.bloc_provider.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,6 +13,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white12,
       appBar: AppBar(
         backgroundColor: Colors.deepPurple,
         title: const Center(
@@ -26,6 +28,9 @@ class HomePage extends StatelessWidget {
               children: [
                 //0. Stream
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.amber,
+                  ),
                   onPressed: () {
                     //to Stream Page
                     Navigator.push(
@@ -35,11 +40,17 @@ class HomePage extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Text("Stream"),
+                  child: const Text(
+                    "Stream",
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
                 const SizedBox(height: 5),
                 //1. Basic Cubit
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.amber,
+                  ),
                   onPressed: () {
                     //to Cubit Page
                     Navigator.push(
@@ -49,11 +60,17 @@ class HomePage extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Text("Cubit (basic)"),
+                  child: const Text(
+                    "Cubit (basic)",
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
                 const SizedBox(height: 5),
                 //2. Cubit Observer
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.amber,
+                  ),
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -62,11 +79,17 @@ class HomePage extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Text("Cubit Observer"),
+                  child: const Text(
+                    "Cubit Observer",
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
                 const SizedBox(height: 5),
                 //3. Bloc Builder
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orangeAccent,
+                  ),
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -75,11 +98,17 @@ class HomePage extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Text("Bloc Builder"),
+                  child: const Text(
+                    "Bloc Builder",
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
                 const SizedBox(height: 5),
                 //4. Bloc Listener
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orangeAccent,
+                  ),
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -88,11 +117,17 @@ class HomePage extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Text("Bloc Listener"),
+                  child: const Text(
+                    "Bloc Listener",
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
                 const SizedBox(height: 5),
                 //5. Bloc Consumer
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orangeAccent,
+                  ),
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -101,7 +136,28 @@ class HomePage extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Text("Bloc Consumer"),
+                  child: const Text(
+                    "Bloc Consumer",
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
+                //6. Bloc Provider
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BlocProviderPage(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    "Bloc Provider",
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
               ],
             ),
