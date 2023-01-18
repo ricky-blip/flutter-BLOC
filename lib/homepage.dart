@@ -5,6 +5,7 @@ import 'package:bloc_roadmap/roadmap/1.cubit/0.bloc_builder.dart';
 import 'package:bloc_roadmap/roadmap/1.cubit/1.bloc_listener.dart';
 import 'package:bloc_roadmap/roadmap/1.cubit/2.bloc_consumer.dart';
 import 'package:bloc_roadmap/roadmap/1.cubit/3.bloc_provider.dart';
+import 'package:bloc_roadmap/roadmap/1.cubit/4.bloc_provider_value.dart';
 import 'package:bloc_roadmap/roadmap/1.cubit/bloc/counter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,6 +15,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    CounterCubitBloc counterC = context.read<CounterCubitBloc>();
     return Scaffold(
       backgroundColor: Colors.white12,
       appBar: AppBar(
@@ -152,12 +154,36 @@ class HomePage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => BlocProviderPage(),
+                        builder: (context) => BlocProvider.value(
+                          value: counterC,
+                          child: const BlocProviderPage(),
+                        ),
                       ),
                     );
                   },
                   child: const Text(
                     "Bloc Provider",
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
+                //7. Bloc Provider Value
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BlocProvider.value(
+                          value: counterC,
+                          child: const BlocProviderValuePage(),
+                        ),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    "Bloc Provider Value",
                     style: TextStyle(color: Colors.black),
                   ),
                 ),

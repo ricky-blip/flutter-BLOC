@@ -1,11 +1,12 @@
 import 'package:bloc_roadmap/roadmap/1.cubit/bloc/counter.dart';
+import 'package:bloc_roadmap/roadmap/1.cubit/data/data_provider_value.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'widget/data_counter_widget.dart';
 
-class BlocProviderPage extends StatelessWidget {
-  const BlocProviderPage({super.key});
+class BlocProviderValuePage extends StatelessWidget {
+  const BlocProviderValuePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class BlocProviderPage extends StatelessWidget {
         automaticallyImplyLeading: false,
         centerTitle: true,
         backgroundColor: Colors.deepPurpleAccent,
-        title: const Text("Bloc Provider"),
+        title: const Text("Bloc Provider Value"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(50.0),
@@ -30,7 +31,7 @@ class BlocProviderPage extends StatelessWidget {
               children: [
                 Material(
                   borderRadius: BorderRadius.circular(15),
-                  color: Colors.red,
+                  color: Colors.green,
                   child: InkWell(
                     borderRadius: BorderRadius.circular(15),
                     onTap: () {
@@ -46,7 +47,7 @@ class BlocProviderPage extends StatelessWidget {
                 const DataCounterWidget(),
                 Material(
                   borderRadius: BorderRadius.circular(15),
-                  color: Colors.red,
+                  color: Colors.green,
                   child: InkWell(
                     borderRadius: BorderRadius.circular(15),
                     onTap: () {
@@ -63,6 +64,23 @@ class BlocProviderPage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => BlocProvider.value(
+                value: counterProvider,
+                child: DataProviderValue(),
+              ),
+            ),
+          );
+        },
+        tooltip: 'Send Data',
+        icon: const Icon(Icons.send),
+        label: const Text('Sending Data Counter'),
+        backgroundColor: Colors.pink,
       ),
     );
   }

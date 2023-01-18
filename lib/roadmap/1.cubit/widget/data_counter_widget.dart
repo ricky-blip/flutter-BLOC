@@ -9,7 +9,8 @@ class DataCounterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    CounterCubitBloc dataCounter = BlocProvider.of<CounterCubitBloc>(context);
+    //NOTE - Access Class with BlocProvider using context.read
+    CounterCubitBloc dataCounter = context.read<CounterCubitBloc>();
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
