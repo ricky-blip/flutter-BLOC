@@ -187,6 +187,27 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(color: Colors.black),
                   ),
                 ),
+                //8. Bloc Access
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BlocProvider.value(
+                          value: counterC,
+                          child: const BlocProviderValuePage(),
+                        ),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    "Bloc Access",
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
               ],
             ),
           ],
